@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if user.save!
       login(user)
       render "show"
-      flash.now[:message] = "Welcome #{user.name} to music app!"
+      flash.now[:message] = "Welcome  to music app!"
     else
       render "new"
     end
