@@ -1,8 +1,23 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
-<%= form_for @user do |f| %>
-  First name: <%= f.text_field :name %><br />
-  Last name : <%= f.text_field :name %><br />
+<center>
+<div class="user form">
   
-  <%= f.submit %>
+<%= form_for @user, class:"form-group" do |f| %>
+ <div class="col">
+  First name: <%= f.text_field :name, class: "form-control" %><br />
+  </div>
+   <div class="col">
+  Email : <%= f.text_field :email, class: "form-control" %><br />
+  </div>
+   <div class="col">
+  Password: <%=f.text_field    :password, class:"form-control" %>
+  </div>
+   <div class="col">
+  Password confirmation <%= f.text_field :password_confirmation, class:"form-control"%>
+  </div>
+  <%= f.submit class:"btn btn-dark"%>
+
 <% end %>
+</div>
+</center>
