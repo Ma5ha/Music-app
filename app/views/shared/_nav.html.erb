@@ -1,13 +1,11 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<a class="navbar-brand" href="#">Navbar w/ text</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+<nav class="navbar navbar-dark bg-dark">
+   <ul style="list-style-type:none;" class="navbar-nav mr-auto">
+    <li class="nav-item">
+     <%= link_to 'Home', root_path,  class:"btn btn-light"%>
       </li>
-      
-  </div>
-  </nav>
+    <li> 
+    <%= link_to "Sign up", signup_path, class:"btn btn-light" %> 
+    </li>
+    </ul>
+    <input type="text" placeholder="Search.." class="btn btn-light">
+</nav>
