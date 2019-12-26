@@ -1,18 +1,14 @@
-<nav class="navbar navbar-dark bg-dark">
-   <ul id= "menu" style="list-style-type:none;" class="navbar-nav mr-auto">
+
+<header>
+<nav class="navbar navbar-fixed-top navbar-dark bg-dark">
+
+   <ul id= "menu" style="list-style-type:none;" class="nav navbar-nav navbar-right">
    
-    <li class="nav-item">
-     <%= link_to 'Home', root_path,  class:"btn btn-light"%>
-      </li>
-      
-      
-    <li> 
-    <%= link_to "Sign up", signup_path, class:"btn btn-light" %> 
-    </li>
-    <li> 
-    <%=link_to "Login", login_path,class:"btn btn-light" %>
-    </li>
+      <li ><%= link_to 'Home', root_path,  class:"btn btn-light"%></li>
+      <li><%= link_to "Sign up", signup_path, class:"btn btn-light" %> </li>
+      <li> <%=link_to "Login", login_path,class:"btn btn-light" %></li>
     </ul>
 
     <input type="text" placeholder="Search.." class="btn btn-light">
 </nav>
+<header>
