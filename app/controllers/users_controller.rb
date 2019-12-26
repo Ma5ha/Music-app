@@ -11,13 +11,14 @@ class UsersController < ApplicationController
     user=User.new(strong_params)
     if user.save!
       login(user)
-      remeber(user)
+      
       render "show"
       flash.now[:message] = "Welcome  to music app!"
     else
       render "new"
     end
   end
+  
 
 
 private

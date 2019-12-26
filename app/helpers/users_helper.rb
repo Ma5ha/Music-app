@@ -14,4 +14,23 @@ module UsersHelper
         coockies.permanent.signed[:user_id]=user.id
         coockies.permanent[:remeber_token]= user.remeber_token
       end
+      def current_user
+        if (user_id= session[:user_id])
+          @current_user || User.find_by(id:session[:user_id])
+        elseif (user_id = coockies.signed[:user_id])
+          @current_user || User.find_by(id: coockies.signed[:user_id])
+          if user && user.authencated?(cookies[:remeber_token])
+            login user
+            @current_user = user
+          end
+        end
+      end
+      def logged_in?
+        !current_user.nil?
+      end
+      def log_out
+        forget(@current_user)
+        session.delete(:user_id)
+        @current_user = nil
+      end
 end
