@@ -1,2 +1,19 @@
 <h1>Sessions#new</h1>
 <p>Find me in app/views/sessions/new.html.erb</p>
+<center>
+<div class="user form">
+  
+<%= form_for @user, class:"form-group" do |f| %>
+ 
+   <div class="col">
+  Email : <%= f.text_field :email, class: "form-control" %><br />
+  </div>
+   <div class="col">
+  Password: <%=f.text_field    :password, class:"form-control" %>
+  </div>
+   
+  <%= f.submit class:"btn btn-dark"%>
+
+<% end %>
+</div>
+</center>
