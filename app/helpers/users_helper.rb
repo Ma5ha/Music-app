@@ -9,4 +9,9 @@ module UsersHelper
         image_tag(gravatar_url, alt: user.name, class: "gravatar")
         
       end
+      def remeber(user)
+        user.remeber
+        coockies.permanent.signed[:user_id]=user.id
+        coockies.permanent[:remeber_token]= user.remeber_token
+      end
 end
