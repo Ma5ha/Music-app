@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
     @user=User.new
   end
   def create
-    @user=User.find_by(email:params[:user][:email], password:params[:user][:password])
-    if @user.name && user.authenticate(params[:password])
+    @user=User.find_by(email:params[:user][:email])
+    if @user.name && user.authenticate(params[user][:password])
       login(@user)
       redirect_to controller: "users", action: 'show'
     else 
