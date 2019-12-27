@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  delete "logout" , to: 'sessions#destroy'
+  get "user", to: "users#show"
   get "login", to:'sessions#new'
   post "login", to: "sessions#create"
   resources :sessions
