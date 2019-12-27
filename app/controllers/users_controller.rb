@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @song = Song.first
   end
   def create
     user=User.new(strong_params)
