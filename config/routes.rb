@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'play_lists/show'
   delete "logout" , to: 'sessions#destroy'
   get "user", to: "users#show"
   get "login", to:'sessions#new'
