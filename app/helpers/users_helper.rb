@@ -17,8 +17,8 @@ module UsersHelper
       def current_user
         if (user_id= session[:user_id])
           @current_user || User.find_by(id:session[:user_id])
-        elseif (user_id = coockies.signed[:user_id])
-          @current_user || User.find_by(id: coockies.signed[:user_id])
+        elsif (user_id = cookies.signed[:user_id])
+          @current_user || User.find_by(id: cookies.signed[:user_id])
           if user && user.authencated?(cookies[:remeber_token])
             login user
             @current_user = user
