@@ -1,10 +1,12 @@
 class PlayListsController < ApplicationController
   def show
+    @p=Playlist.all
   end
   def new
-    @playlist=Playlist.create
+    @playlist = Playlist.new
   end
   def create
-    @playli
+    @playlist = Playlist.create(name:params[:playlist][:name])
+    render 'show'
   end
 end
