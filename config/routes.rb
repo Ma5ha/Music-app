@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get 'playlist_create', to: "play_lists#new"
+  post 'playlist_create', to: "play_lists#create"
   get 'play_lists/show'
   delete "logout" , to: 'sessions#destroy'
   get "user", to: "users#show"
