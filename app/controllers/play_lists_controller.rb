@@ -1,12 +1,14 @@
 class PlayListsController < ApplicationController
+  include UsersHelper
   def show
-    @p=Playlist.all
+    @user = current_user
   end
   def new
     @playlist = Playlist.new
   end
   def create
-    @playlist = Playlist.create(name:params[:playlist][:name])
+    @user = current_user
+    @user.playlists.create(name:params[:playlist][:name])
     render 'show'
   end
 end
