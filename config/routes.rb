@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  post 'songcreate', to: "songs#create"
   get 'playlist_create', to: "play_lists#new"
   post 'playlist_create', to: "play_lists#create"
   get 'play_lists/show'
