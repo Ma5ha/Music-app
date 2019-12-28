@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_190304) do
+ActiveRecord::Schema.define(version: 2019_12_28_120745) do
+
+  create_table "indices", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playlist_routers", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_routers_on_playlist_id"
+    t.index ["song_id"], name: "index_playlist_routers_on_song_id"
+  end
 
   create_table "playlists", force: :cascade do |t|
     t.string "name"
