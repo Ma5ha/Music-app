@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @playlist = @user.playlists.first
+    @user = User.first
+    
   end
   def create
     user=User.new(strong_params)
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     else
       render "new"
     end
+  
   end
   
 

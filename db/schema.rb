@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_123502) do
+ActiveRecord::Schema.define(version: 2019_12_28_143617) do
 
   create_table "containers", force: :cascade do |t|
     t.integer "playlist_id"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_123502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "link"
+    t.integer "conteiner_id"
+    t.index ["conteiner_id"], name: "index_songs_on_conteiner_id"
   end
 
   create_table "users", force: :cascade do |t|
