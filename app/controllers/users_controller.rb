@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.first
-    @playlist= @user.playlists.first
+    @playlist= @user.playlists.all
     
   end
   def create

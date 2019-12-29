@@ -2,5 +2,7 @@ class SongsController < ApplicationController
     def new
     end
     def create
-    end
+        @song=Song.create(name:params[:song][:name],artrist:params[:song][:artrist],link:params[:song][:url])
+        redirect_to controller: 'users', action: 'show'
+    end 
 end
