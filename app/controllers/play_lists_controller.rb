@@ -11,4 +11,10 @@ class PlayListsController < ApplicationController
     @user.playlists.create(name:params[:playlist][:name])
     render 'show'
   end
+  def destroy
+    
+    @playlist =Playlist.find_by(id: params[:id])
+    @playlist.destroy
+    redirect_to controller: "users", action: "show"
+  end
 end

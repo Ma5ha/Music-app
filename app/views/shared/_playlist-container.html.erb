@@ -1,26 +1,30 @@
 
+<% @playlist.each do |playlist| %>
+  
 
-<% @playlist.each do|playlist|%>
-<%@song= playlist.songs.all%>
-
-
-
-<div class="row">
-  <div class="col-4">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"> <%=playlist.name%> </a>
-   <%end%>
-    </div>
-    <%@song.each do|song|%>
+  
 
 
-  </div>
-  <div class="col-8">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><%=song.name%></div>
-      <%end%>
-    </div>
-  </div>
+
+
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+   <%=playlist.name%>
+   <div class="float-right">
+      <span > <%= button_to "x", { controller:"play_lists", action: "destroy", id: playlist.id },
+                                method: :delete, data: { confirm: "Are you sure?" }, class: "close" %> </span>
+  
 </div>
+   
+   
+    <span class="badge badge-primary badge-pill"><%=playlist.songs.length%></span>
+    
+  </li>
+  
+</ul>
 
 
+
+
+<% end %>

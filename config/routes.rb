@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  delete 'playdelete', to: 'play_lists#destroy'
   post 'songcreate', to: "songs#create"
   get 'playlist_create', to: "play_lists#new"
   post 'playlist_create', to: "play_lists#create"
