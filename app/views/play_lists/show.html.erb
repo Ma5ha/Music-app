@@ -1,3 +1,6 @@
 <h1>PlayLists#show</h1>
 <p>Find me in app/views/play_lists/show.html.erb</p>
-<%=@user.playlists.all%>
+<% @user.name %>
+ <%@playlist.songs.all.each do |song| %>
+   <%=song.name %><br>
+ <% end %>

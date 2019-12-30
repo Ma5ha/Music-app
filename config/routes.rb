@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'songs', to: 'songs#index'
   delete 'playdelete', to: 'play_lists#destroy'
   post 'songcreate', to: "songs#create"
   get 'playlist_create', to: "play_lists#new"
   post 'playlist_create', to: "play_lists#create"
-  get 'play_lists/show'
+  get 'show_list', to: "play_lists#show"
   delete "logout" , to: 'sessions#destroy'
   get "user", to: "users#show"
   get "login", to:'sessions#new'

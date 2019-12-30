@@ -1,7 +1,9 @@
 class PlayListsController < ApplicationController
   include UsersHelper
   def show
+    #raise params.inspect
     @user = current_user
+    @playlist= Playlist.find_by(id:params[:id])
   end
   def new
     @playlist = Playlist.new

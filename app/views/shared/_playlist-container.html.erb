@@ -10,7 +10,8 @@
 
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-   <%=playlist.name%>
+  <%= link_to playlist.name,  controller: "play_lists", action: "show", id: playlist.id%>
+  
    <div class="float-right">
       <span > <%= button_to "x", { controller:"play_lists", action: "destroy", id: playlist.id },
                                 method: :delete, data: { confirm: "Are you sure?" }, class: "close" %> </span>

@@ -1,0 +1,17 @@
+<% @songs.each do |song| %>
+  
+
+
+
+<div class="btn-group dropright">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%=song.name%> 
+  </button>  
+
+  <div class="dropdown-menu">
+
+   <%= link_to 'Add to playlist', "#" %>
+  </div>
+</div>
+<br>
+<% end %>
