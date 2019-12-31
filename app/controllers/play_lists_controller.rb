@@ -11,7 +11,7 @@ class PlayListsController < ApplicationController
   def create
     @user = current_user
     @user.playlists.create(name:params[:playlist][:name])
-    render 'show'
+    
   end
   def destroy
     

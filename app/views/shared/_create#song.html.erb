@@ -15,6 +15,7 @@
         </button>
       </div>
       <div class="modal-body">
+      
         <%=form_for :song, url: songcreate_path, remote: true do |f| %>
        Song title: <%=f.text_field :name%><br>
          Artrist name: <%=f.text_field :artrist%><br>
@@ -29,3 +30,4 @@
     </div>
   </div>
 </div>
+
