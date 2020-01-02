@@ -1,5 +1,7 @@
 module UsersHelper
-    
+     def close
+      octicon "trashcan" 
+     end
     def login(user)
         session[:user_id] = user.id
       end
