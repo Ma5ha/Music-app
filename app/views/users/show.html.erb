@@ -1,12 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%=gravatar_for @user%>
-<div class="name">
+<div class="user">
 
+<%=gravatar_for @user%>
 <h1><%=@user.name%></h1>
-</div>
 <%= render "shared/list"%>
-<%= render "shared/create#song"%>
+</div>
+
+
+
+
 <div class="playlist">
 <h2> Your playlist </h2>
 
