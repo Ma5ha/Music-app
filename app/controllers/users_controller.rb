@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   include UsersHelper
+  
   def new
     @user = User.new
   end
 
   def show
+    
     @user = User.first
     @playlist= @user.playlists.all
     

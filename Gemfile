@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
-
+gem 'youtube-embed'
 gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
