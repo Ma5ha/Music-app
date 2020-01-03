@@ -14,8 +14,8 @@ class PlayListsController < ApplicationController
     
   end
   def destroy
-    
-    @playlist =Playlist.find_by(id: params[:id])
+    raise params.inspect
+    @playlist =Playlist.find_by(id: params.permit[:id])
     @playlist.destroy
     redirect_to controller: "users", action: "show"
   end
