@@ -6,10 +6,11 @@
 <%= form_for @user, url: login_path,  class:"form-group" do |f| %>
  
    <div class="col">
-  Email : <%= f.text_field :email, class: "form-control" %><br/>
+  <%= octicon "mail", :color => "light" %> Email: <%= f.text_field :email, class: "form-control" %><br/>
   </div>
    <div class="col">
-  Password: <%=f.text_field    :password, class:"form-control" %>
+   <%= octicon "lock" %>
+  Password: <%=f.text_field    :password, class:"form-control", type: "password" %>
   </div>
    
   <%= f.submit class:"btn btn-dark"%>

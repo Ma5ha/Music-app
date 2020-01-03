@@ -1,13 +1,13 @@
 
-<header>
+<header class= "navbar-fixed-top"> 
 <div>
 <center>
 
 <h1>Music app</h1>
 <center>
 </div>
-<nav class="navbar navbar-fixed-top navbar-dark bg-dark " >
-   <a class="navbar-brand"> 
+<nav class="navbar  navbar-dark bg-dark " >
+    
    
    <ul id= "menu" style="list-style-type:none;" class="nav navbar-nav navbar-right">
    
@@ -20,8 +20,11 @@
       <%= render 'shared/dropdown'%>
       <%end%>
     </ul>
-
-    <input type="text" placeholder="Search.." class="btn btn-light">
+   <div>
+   
+    <input  type="text" placeholder="Search.."   class="btn btn-light"> <%=octicon "search",:type=> "light"%>
+    
+    </div>
 </nav>
 
 
