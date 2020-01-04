@@ -1,0 +1,21 @@
+<% @songs.each do |song| %>
+
+ 
+
+
+<div class="btn-group dropright">
+  <%= button_tag song.name,"class"=>"btn btn-secondary dropdown-toggle",  "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded"=> "false"%> 
+ 
+
+  <div class="dropdown-menu">
+  <% @playlist.each do |item| %>
+  <%= button_to item.name, controller: "lists", action: "create" ,playlist_id:item.id, song_id: song.id %> <br>
+
+  <% end %>
+    
+  </div>
+</div>
+<br>
+
+
+<% end %>  

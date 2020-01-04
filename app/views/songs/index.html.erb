@@ -1,22 +1,39 @@
-<% @songs.each do |song| %>
-
-  
 
 
 
-<div class="btn-group dropright">
-  <%= button_tag song.name,"class"=>"btn btn-secondary dropdown-toggle",  "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded"=> "false"%> 
+
+
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Artrist</th>
+      <th scope="col">Song</th>
+      <th scope="col">Album</th>
+      
+    </tr>
+  </thead>
  
+  <tbody>
+  
+    <% @songs.each do |song| %>
+   <tr>
+      <th scope="row"><%=song.id%></th>
+      <td><%=song.artrist%></td>
+      <div>
+      <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video"  do %>
+      <% octicon "play" %>
+      <%end%>  
+      </td>
+      </div >
+      <td><%=song.album%></td>
+    </tr>
+    <% end %>  
 
-  <div class="dropdown-menu">
-  <% @playlist.each do |item| %>
-  <%= button_to item.name, controller: "lists", action: "create" ,playlist_id:item.id, song_id: song.id %> <br>
-
-  <% end %>
-    
-  </div>
-</div>
-<br>
+</table>
 
 
-<% end %>  
+
+
+
