@@ -1,0 +1,15 @@
+
+ <% @songs.each do |song| %>
+   <tr>
+      <th scope="row"><%=song.id%></th>
+      <td><%=song.artrist%></td>
+      <div>
+      <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video"  do %>
+      <% octicon "play" %>
+      <%end%>  
+      </td>
+      </div >
+      <td><%=song.album%></td>
+    </tr>
+    <% end %>  
+

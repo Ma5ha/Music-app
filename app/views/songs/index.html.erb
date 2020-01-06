@@ -17,23 +17,35 @@
  
   <tbody>
   
-    <% @songs.each do |song| %>
-   <tr>
-      <th scope="row"><%=song.id%></th>
-      <td><%=song.artrist%></td>
-      <div>
-      <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video"  do %>
-      <% octicon "play" %>
-      <%end%>  
-      </td>
-      </div >
-      <td><%=song.album%></td>
-    </tr>
-    <% end %>  
+   <%= render partial: 'play',object: @songs %>
 
 </table>
 
 
+<div class="btn-group dropright">
+  <button type="button" class="btn btn-secondary">
+    
+  </button>
+  <%=button_tag  class:"btn btn-secondary dropdown-toggle dropdown-toggle-split", "data-toggle"=>"dropdown", "aria-haspopup"=>"true", "aria-expanded"=>"false" do%>
+  <% octicon "chevron-down" %>
+
+  <%end%>
+    <span class="sr-only">Toggle Dropright</span>
+  </button>
+  <div class="dropdown-menu">
+    <!-- Dropdown menu links -->
+
+
+    sasas
+  </div>
+</div>
 
 
 
+
+
+<%= button_tag  "sasas", class:"btn btn-secondary dropdown-toggle dropdown-toggle-split" do %>
+
+<%octicon "chevron-down" %>
+
+<%end%>
