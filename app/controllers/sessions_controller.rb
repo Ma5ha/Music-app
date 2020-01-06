@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
   def create
    
     @user=User.find_by(email:params[:user][:email])
-    
+      if params[remember_me]==1 
+        remeber (@user)
+      end
       login(@user)
       
        redirect_to controller: "users", action: "show"

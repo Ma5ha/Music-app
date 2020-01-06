@@ -12,6 +12,11 @@
    <%= octicon "lock" %>
   Password: <%=f.text_field    :password, class:"form-control", type: "password" %>
   </div>
+  <br>
+  Remeber me  
+  <%= f.check_box :remember %>
+  
+   <br> <br>
    
   <%= f.submit class:"btn btn-dark"%>
 
