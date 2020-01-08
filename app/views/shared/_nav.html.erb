@@ -11,7 +11,7 @@
    
    <ul id= "menu" style="list-style-type:none;" class="nav navbar-nav navbar-right">
    <%if logged_in? %>
-      <li ><%= link_to 'Home', user_path , class:"btn btn-light"%></li>
+      <li ><%= link_to 'User page', user_path , class:"btn btn-light"%></li>
       <%else%>
       <li><%= link_to 'Home', root_path,  class:"btn btn-light"%></li>
    <%end%>
