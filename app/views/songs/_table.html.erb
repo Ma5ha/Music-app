@@ -1,6 +1,13 @@
- <tr>
-      <th scope="row"><%= song.id %></th>
-      <td><%=song.name%></td>
-      <td><%=song.artrist%></td>
-      <td><%=song.album%></td>
-    </tr>
+
+  <%= link_to  "#", class:" ", "data-toggle"=>"dropdown" do %>
+  <% octicon "plus-small" %>
+  <%end%>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <% @playlist.each do |p|%>
+  
+    <%=link_to p.name, addToList_path(playlist_id:p.id, song_id: song.id) %>
+    <a class="dropdown-item" href="#"><%=p.name%></a>
+   
+   <%end%>
+  </div>

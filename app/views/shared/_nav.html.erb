@@ -3,15 +3,19 @@
 <div>
 <center>
 
-<h1>Music app</h1>
+<h1><%=link_to "Music app", root_path%></h1>
 <center>
 </div>
 <nav class="navbar  navbar-dark bg-dark " >
     
    
    <ul id= "menu" style="list-style-type:none;" class="nav navbar-nav navbar-right">
+   <%if logged_in? %>
+      <li ><%= link_to 'Home', user_path , class:"btn btn-light"%></li>
+      <%else%>
+      <li><%= link_to 'Home', root_path,  class:"btn btn-light"%></li>
+   <%end%>
    
-      <li ><%= link_to 'Home', root_path,  class:"btn btn-light"%></li>
       <li><%= link_to "Sign up", signup_path, class:"btn btn-light" %> </li>
       <li> <%=link_to "Login", login_path,class:"btn btn-light" %></li>
       

@@ -1,12 +1,34 @@
 
  <% @songs.each do |song| %>
+ 
    <tr>
+   <div>
       <th scope="row"><%=song.id%></th>
       <td><%=song.artrist%></td>
-      <div>
-      <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video"  do %>
+      
+
+      <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video", "data-toggle"=>"tooltip", title:"Play me"  do %>
       <% octicon "play" %>
       <%end%>  
+
+      
+
+  <%= link_to  "#", class:" " , "data-toggle"=>"dropdown" do %>
+  <% octicon "plus-small" %>
+  <%end%>
+  
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <% @playlist.each do |p|%>
+  <center>
+    <%=link_to p.name, addToList_path(playlist_id:p.id, song_id: song.id), method: :post%><br>
+    
+   <center>
+   <%end%>
+  </div>
+
+  </div>
+
+      
       </td>
       </div >
       <td><%=song.album%></td>

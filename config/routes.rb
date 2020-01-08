@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post "lists/create"
+  post "addToList", to: "lists#create"
   get 'songs', to: 'songs#index'
   delete 'playdelete', to: 'play_lists#destroy'
   post 'songcreate', to: "songs#create"

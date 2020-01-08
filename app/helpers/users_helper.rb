@@ -15,14 +15,14 @@ module UsersHelper
       def remeber(user)
         user.remeber
         coockies.permanent.signed[:user_id]=user.id
-        coockies.permanent[:remeber_token]= user.remeber_token
+        coockies.permanent[:remember_token]= user.remeber_token
       end
       def current_user
         if (user_id= session[:user_id])
           @current_user || User.find_by(id:session[:user_id])
         elsif (user_id = cookies.signed[:user_id])
           @current_user || User.find_by(id: cookies.signed[:user_id])
-          if user && user.authencated?(cookies[:remeber_token])
+          if user && user.authencated?(cookies[:remember_token])
             login user
             @current_user = user
           end
@@ -36,4 +36,9 @@ module UsersHelper
         session.delete(:user_id)
         @current_user = nil
       end
+      def forget(user)
+        user.forget
+        cookies.delete(:user_id)
+        cookies.delete(:remember_token)
+        end
 end

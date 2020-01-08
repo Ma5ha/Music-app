@@ -3,7 +3,7 @@
 <center>
 <div class="user form">
   
-<%= form_for @user, url: login_path,  class:"form-group" do |f| %>
+<%= form_for :session, url: login_path,  class:"form-group" do |f| %>
  
    <div class="col">
   <%= octicon "mail", :color => "light" %> Email: <%= f.text_field :email, class: "form-control" %><br/>
@@ -18,8 +18,9 @@
   
    <br> <br>
    
-  <%= f.submit class:"btn btn-dark"%>
-
+  <%= f.submit value:"Login", class:"btn btn-dark" %>
+   
+  
 <% end %>
 </div>
 </center>

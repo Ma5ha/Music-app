@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class PlayListsControllerTest < ActionDispatch::IntegrationTest
-  test "should get show" do
-    get play_lists_show_url
-    assert_response :success
+  test "playlist create" do
+    #get playlist_create_path  controller: "play_lists", action: "new" 
+    assert_routing playlist_create_path, controller: "play_lists", action: "new"
   end
 
 end

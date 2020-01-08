@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_143617) do
+ActiveRecord::Schema.define(version: 2020_01_06_101712) do
 
   create_table "containers", force: :cascade do |t|
     t.integer "playlist_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_143617) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "rember_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
