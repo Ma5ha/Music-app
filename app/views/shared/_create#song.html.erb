@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SongModal">
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#SongModal">
   Create song
 </button>
 
@@ -17,10 +17,9 @@
       <div class="modal-body">
       
         <%=form_for :song, url: songcreate_path, remote: true do |f| %>
-       Song title: <%=f.text_field :name%><br>
-         Artrist name: <%=f.text_field :artrist%><br>
-          Youtube url:<%=f.text_field :url%><br>
-
+        <p>Song title:   <span><%=f.text_field :name%></p><br>
+        <p>Artrist name: <%=f.text_field :artrist%></p><br>
+        <p>Youtube url:  <%=f.text_field :url%></p><br> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

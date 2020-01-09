@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include UsersHelper
+  before_action :require_login 
   
   def new
     @user = User.new
@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def show
     
-    @user = User.first
-    @playlist= @user.playlists.all
+    @user = current_user
+    
     
   end
   def create
@@ -30,5 +30,10 @@ private
 def strong_params
   params.require(:user).permit(:name,:email,:password,:password_confirmation)
 end
-
+def require_login
+  unless logged_in?
+    flash[:error] = "You must be logged in to access this section"
+    redirect_to login_path
+  end
+end
 end

@@ -25,7 +25,9 @@
       <%end%>
     </ul>
    <div>
-   
+   <% if logged_in? && current_user.admin? %>
+   <%= render "shared/create#song"%>
+   <%end%>
     <input  type="text" placeholder="Search.."   class="btn btn-light"> <%=octicon "search",:type=> "light"%>
     
     </div>

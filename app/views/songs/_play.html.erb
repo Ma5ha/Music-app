@@ -12,14 +12,19 @@
       <%end%>  
 
       
-
+<%if logged_in? %>
   <%= link_to  "#", class:" " , "data-toggle"=>"dropdown" do %>
   <% octicon "plus-small" %>
   <%end%>
-  
+<%end%>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <% if @user != nil   && @user.playlists.any?%>
+ <% @playlist= @user.playlists.all%>
+ 
   <% @playlist.each do |p|%>
+  
   <center>
+  
     <%=link_to p.name, addToList_path(playlist_id:p.id, song_id: song.id), method: :post%><br>
     
    </center>
@@ -28,7 +33,7 @@
 
   </div>
 
-      
+    <%end%> 
       </td>
       </div >
       <td><%=song.album%></td>

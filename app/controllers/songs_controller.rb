@@ -9,7 +9,7 @@ class SongsController < ApplicationController
     end 
     def index
         @user = current_user
-        @playlist= @user.playlists.all
+        
         @songs=Song .all
         
     end

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  include UsersHelper
+  
   def new
     @user=User.new
   end
@@ -11,10 +11,11 @@ class SessionsController < ApplicationController
         params[:session][:remeber] == 1 ? remember(user) : forget(user)
       
         redirect_to controller: "users", action: "show"
-   
+      flash[:welcome] ="Welcome to music app  "
       else
-        flash.now[:danger] = 'Invalid email/password combination'
-        render 'new'
+        
+        redirect_to login_path
+        flash[:alert] = 'Invalid email/password combination'
       end
        
    

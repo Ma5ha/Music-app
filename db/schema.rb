@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_101712) do
+ActiveRecord::Schema.define(version: 2020_01_09_150554) do
 
   create_table "containers", force: :cascade do |t|
     t.integer "playlist_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_101712) do
     t.string "link"
     t.integer "conteiner_id"
     t.index ["conteiner_id"], name: "index_songs_on_conteiner_id"
+    t.index ["name"], name: "index_songs_on_name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_101712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.integer "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

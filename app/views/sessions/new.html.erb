@@ -2,7 +2,18 @@
 <p>Find me in app/views/sessions/new.html.erb</p>
 <center>
 <div class="user form">
+  <%if flash[:error]%>
+<div class="alert alert-warning" role="alert">
+  <%= flash[:error] %>
+</div>
+<%end%>
+  <% if flash[:alert]%>
+
+  <div class="alert alert-danger" role="alert">
+  <%= flash[:alert] %>
+</div>
   
+  <%end%>
 <%= form_for :session, url: login_path,  class:"form-group" do |f| %>
  
    <div class="col">

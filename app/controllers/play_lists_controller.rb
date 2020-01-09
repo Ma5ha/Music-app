@@ -1,5 +1,5 @@
 class PlayListsController < ApplicationController
-  include UsersHelper
+  
   def show
     #raise params.inspect
     @user = current_user
@@ -11,11 +11,12 @@ class PlayListsController < ApplicationController
   def create
     @user = current_user
     @user.playlists.create(name:params[:playlist][:name])
+    flash[:playlist]= "lisr is created"
     
   end
   def destroy
-    raise params.inspect
-    @playlist =Playlist.find_by(id: params.permit[:id])
+    
+    @playlist =Playlist.find_by(id: params[:id])
     @playlist.destroy
     redirect_to controller: "users", action: "show"
   end

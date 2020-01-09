@@ -1,19 +1,31 @@
+
 <div class="user">
 
+
+
+<%if flash[:welcome]%>
+<div class="alert alert-primary" role="alert">
+  <%= flash[:welcome]%>
+</div>
+
+<%end%>
 <%=gravatar_for @user%>
 <h1><%=@user.name%></h1>
 
 <%= render "shared/list"%>
+
 </div>
 
 
+<%if @user.playlists.any?%>
 
-
-
+<%@playlist= @user.playlists.all%>
 <div class="playlist">
 <h2> Your playlist </h2>
 
-<%=render 'shared/playlist-container'%>
+<%=render 'shared/playlist-container', object: @playlist %>
 
+
+<%end%>
 </div>
 
