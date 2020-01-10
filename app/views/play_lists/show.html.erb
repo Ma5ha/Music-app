@@ -1,8 +1,22 @@
-<h1>PlayLists#show</h1>
-<p>Find me in app/views/play_lists/show.html.erb</p>
-<% @user.name %>
- <%@playlist.songs.all.each do |song| %>
-   <%= song.name %> <%= link_to "remove me", list_destroy_path(playlist_id: @playlist.id, song_id: song.id), method: :delete %> 
-   <%=@playlist.id%>
-  <br>
-  <%end%>
+<center>
+<h1><%=@playlist.name%></h2>
+
+ 
+
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Artrist</th>
+      <th scope="col">Song</th>
+      <th scope="col">Album</th>
+      
+    </tr>
+  </thead>
+ 
+  <tbody>
+  
+  <%= render partial: "list" , object: @playlist%>
+
+</table>
