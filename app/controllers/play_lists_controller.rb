@@ -18,6 +18,12 @@ class PlayListsController < ApplicationController
     
     @playlist =Playlist.find_by(id: params[:id])
     @playlist.destroy
-    redirect_to controller: "users", action: "show"
+
+      respond_to do |format|   
+        format.html { redirect_to song_url }   
+        format.json { head :no_content }   
+        format.js   { render :layout => false }   
+    end
   end
+
 end

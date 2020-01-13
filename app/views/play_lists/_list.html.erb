@@ -10,7 +10,7 @@
     <td><%=song.name  %> <%=link_to song.link, "rel" =>"noopener noreferrer", "target"=>"_blank">"open video",  title:"Play me"  do %>
       <% octicon "play" %>
         <%end%>  
-    <%= link_to list_destroy_path(playlist_id: @playlist.id, song_id: song.id), method: :delete do %>
+    <%= link_to list_destroy_path(playlist_id: @playlist.id, song_id: song.id),class: "delete_song", method: :delete, remote: true do %>
         <% octicon "trashcan" %>
         <%end%>
       

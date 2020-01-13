@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "songFind", to: "songs#find"
   delete "list_destroy", to: "lists#destroy"
   post "addToList", to: "lists#create"
   get 'songs', to: 'songs#index'

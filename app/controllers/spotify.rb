@@ -11,11 +11,20 @@ me = RSpotify::User.find('Mladen')
 @user=User.first
 @playlist = @user.playlists
 @FirPlay = @playlist.first.songs
-@song= Container.find_by(playlist_id: 1, song_id: 6)
-@song_one.each do |s|
+=begin
+@song= Song.all
+@song.each do |s|
+    if s.name.match("Mir")
+        p s.name
+    end
 
-    p s
-    #s.destroy
-    p s
+end
+=end
+search= "mitch"
 
+@song = Song.where("artrist like ?", "%#{search}%")
+
+@song.each do |s|
+
+p s.name
 end

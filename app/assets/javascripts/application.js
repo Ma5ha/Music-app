@@ -18,3 +18,7 @@
 //= require popper
 //= require bootstrap
 
+
+$("#masha").click(function popup() {
+  alert("masha");
+});
