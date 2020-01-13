@@ -1,32 +1,28 @@
 
-<script>
-$(".masha").click(function popup() {
-  alert("masha");
-});
-function popup() {
-  $( "p" ).empty();
-}
-</script>
 
+
+<button class="masha" id="masha" onClick="popup()">alert</button>
 <%if @song != nil%>
 
 <% @song.each do |s|%>
-        
-
-<div>
-<div class = "here" >
-<p><%= s.name%></p> <br>
+    <p><%= s.name%></p> <br>    
 <%end%>
-</div>
+<%end%>
+
+
+<div class = "here" >
+<p> ovde</p>
+
+
+
 </div>
 
 
    
-<%end%>
 
 
 
 
 
-<p> Pusi ga </p>
-<button class="masha" id="masha" onClick="popup()">alert</button>
+
+

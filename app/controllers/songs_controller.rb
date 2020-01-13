@@ -4,18 +4,17 @@ class SongsController < ApplicationController
 
     end
     def find
-        #raise params.inspect
-        if params[:song]
+        #raise params.inspec
+        
+        
             @song= Song.where("name like ?", "%#{params[:song][:name]}%")
             
             respond_to do |format|
                 format.html
                 format.js
             end
-        else 
-            @song = Song.all
+            
         
-        end
 
     end
     def create

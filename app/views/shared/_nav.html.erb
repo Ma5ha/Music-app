@@ -28,24 +28,33 @@
    <% #if logged_in? && current_user.admin? %>
    <%# render "shared/create#song"%>
    <%#end%>
-    <%= form_for :song, url: songFind_path, html:{ class:"form", method: :get, remote: true } do |f| %>
-  <%= f.search_field :name %>
-  <%=f.submit  value:"search"%>
-   <% end %>
+  
     
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+
+<%= button_tag"moda", type: "button",class:"btn btn-light", "data-toggle"=> "modal", "data-target"=> "#exampleModalLong" do%>
+<%octicon "search" %>
+<%end%>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"> 
+
+          <%= form_for :song, url: songFind_path, html:{ class:"form", method: :get, remote: true} do |f| %>
+  <%= f.search_field :name %>
+  <%=f.submit  value:"search"%>
+  <%end%>
+
+
+  </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -53,7 +62,8 @@
       <div class="modal-body">
       
 
-      <%= render :template =>  "songs/find" %>
+      <%= render :template =>  "songs/find"  %>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
