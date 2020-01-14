@@ -1,20 +1,13 @@
 
 
 
-<button class="masha" id="masha" onClick="popup()">alert</button>
-<%if @song != nil%>
 
-<% @song.each do |s|%>
-    <p><%= s.name%></p> <br>    
-<%end%>
-<%end%>
 
 
 <div class = "here" >
-<p> ovde</p>
 
 
-
+<%= render 'songs/find', locals: {song: @song} %>
 </div>
 
 

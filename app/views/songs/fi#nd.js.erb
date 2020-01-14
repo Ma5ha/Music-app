@@ -1,0 +1,8 @@
+
+function myF() {   
+    $(".here").append("<%@song.each do |s|%> <p> <%=s.name%></p> <%end%> ");
+   };
+
+
+$(".form").bind('ajax:success', myF())
+

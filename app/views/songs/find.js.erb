@@ -1,8 +1,7 @@
 
 function myF() {   
-    $(".here").append("<%@song.each do |s|%> <p> <%=s.name%></p> <%end%> ");
+    $(".here").html("<%= j(render 'songs/find', locals: {song: @song})%>"); 
    };
 
-
+  
 $(".form").bind('ajax:success', myF())
-
