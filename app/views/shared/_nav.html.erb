@@ -46,12 +46,12 @@
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-xl" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-scrollable modal-xl" role="document">
+  <div class="modal-dialog  modal-dialog-scrollable modal-xl" role="document"  >
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle"> 
 
-          <%= form_for :song, url: songFind_path, html:{ class:"form", method: :get, remote: true} do |f| %>
+          <%= form_for :song, url: songs_path, html:{ class:"form", method: :get, remote: true} do |f| %>
   <%= f.search_field :name, class:"form-control form-control-lg", id:"songInput" %>
   
   <%end%>
@@ -65,7 +65,7 @@
       <div class="modal-body">
       
 
-      <%= render :template =>  "songs/find"  %>
+      <%= render :template =>  "songs/index"  %>
 
       </div>
       

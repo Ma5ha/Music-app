@@ -24,9 +24,16 @@ class SongsController < ApplicationController
     end 
     def index
         @user = current_user
-        
-        @songs=Song.all
-        
+        if params[:song]
+            @songs= Song.where("name like ?", "%#{params[:song][:name]}%")
+            
+            respond_to do |format|
+                format.html
+                format.js
+            end
+        else
+            @songs= Song.all
+        end
     end
     private
 

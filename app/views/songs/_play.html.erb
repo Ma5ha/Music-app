@@ -1,4 +1,23 @@
 
+
+
+
+
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Artrist</th>
+      <th scope="col">Song</th>
+      <th scope="col">Album</th>
+      
+    </tr>
+  </thead>
+ 
+  <tbody>
+  <% if @songs != nil%>
+   
  <% @songs.each do |song| %>
  
    <tr>
@@ -11,13 +30,13 @@
       <% octicon "play" %>
       <%end%>  
 
-      
+  <div class="btn-group dropright">
 <%if logged_in? %>
-  <%= link_to  "#", class:" " , "data-toggle"=>"dropdown" do %>
+  <%= link_to  "#", class:"dropup" , "data-toggle"=>"dropdown" do %>
   <% octicon "plus-small" %>
   <%end%>
 <%end%>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="  ">
   <% if @user != nil   && @user.playlists.any?%>
  <% @playlist= @user.playlists.all%>
  
@@ -32,11 +51,23 @@
   </div>
 
   </div>
-
+</div>
     <%end%> 
       </td>
       </div >
       <td><%=song.album%></td>
     </tr>
     <% end %>  
+<%end%>
+
+
+</table>
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,7 @@
+
+function myF() {   
+    $(".here").html("<%= j(render 'songs/play', locals: {song: @songs})%>"); 
+   };
+
+  
+$(".form").bind('ajax:success', myF())
