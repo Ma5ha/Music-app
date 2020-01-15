@@ -1,7 +1,9 @@
 <div class="dropdown">
-  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Profile
-  </button>
+<%=button_tag  class: "btn btn-light dropdown-toggle", "data-toggle"=>"dropdown" do%>
+<% octicon "person" %>
+<%end%>
+
+ 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <%= link_to 'Log out', logout_path , class:"dropdown-item", method: "delete" %>
     <%= link_to 'My profile' ,user_path,class:"dropdown-item" %>

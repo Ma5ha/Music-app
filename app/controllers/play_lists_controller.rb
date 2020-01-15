@@ -20,7 +20,7 @@ class PlayListsController < ApplicationController
     @playlist.destroy
 
       respond_to do |format|   
-        format.html { redirect_to song_url }   
+        format.html { redirect_to playdelete_url }   
         format.json { head :no_content }   
         format.js   { render :layout => false }   
     end
