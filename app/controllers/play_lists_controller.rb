@@ -11,7 +11,11 @@ class PlayListsController < ApplicationController
   def create
     @user = current_user
     @user.playlists.create(name:params[:playlist][:name])
-    flash[:playlist]= "lisr is created"
+    
+      respond_to do |format|
+        format.html
+        format.js
+      end
     
   end
   def destroy

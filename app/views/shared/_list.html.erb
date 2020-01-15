@@ -17,7 +17,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%=form_for :playlist, url: playlist_create_path, remote:true do |f| %>
+        <%=form_for :playlist, url: playlist_create_path,class:"createPlaylist", remote:true do |f| %>
         <%=f.text_field :name, class:"form-control form-control-lg" %>
         <%end%>
       </div>

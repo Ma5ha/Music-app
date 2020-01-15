@@ -1,0 +1,6 @@
+function myF() {   
+    $(".listUpdate").html("<%= j(render 'shared/playlist-container', object: @playlist=@user.playlists.all )%>"); 
+   };
+
+  
+$(".createPlaylist").bind('ajax:success', myF())
