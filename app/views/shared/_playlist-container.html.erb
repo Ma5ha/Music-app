@@ -1,4 +1,6 @@
 
+
+
 <% @playlist.each do |playlist| %>
   
 
@@ -15,7 +17,7 @@
   
    <div class="float-right">
       <span > 
-      <%=link_to  playdelete_path(id: playlist.id ), method: :delete, remote: true do%> 
+      <%=link_to  playdelete_path(id: playlist.id ),class: "SongDelete", method: :delete, remote: true do%> 
       <%octicon "trashcan"%>
        <%end%>
           
