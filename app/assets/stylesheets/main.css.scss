@@ -2,10 +2,14 @@ div.playlist{
      
     border-style: groove;
     border-width: thick;
-    margin-top: -315px;
-    float: right;
-    width: 460px;
+   
+    float: left;
+    margin-top: px;
+    width: 301px;
     margin-right: 223px;
+    overflow:scroll;
+    height:270px;
+    color:white;
 }
 div.user {
     margin: 20px;

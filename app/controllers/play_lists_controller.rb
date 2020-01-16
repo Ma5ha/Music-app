@@ -11,7 +11,7 @@ class PlayListsController < ApplicationController
   def create
     @user = current_user
     @user.playlists.create(name:params[:playlist][:name])
-    
+    flash[:playlist] = "Your playlist is created"
       respond_to do |format|
         format.html
         format.js

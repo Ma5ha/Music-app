@@ -10,30 +10,30 @@
   </button>
 </div>
 <%end%>
-<%=gravatar_for @user%>
-<h1><%=@user.name%></h1>
-
-<%= render "shared/list"%>
 
 
-<%=button_to "find", songFind_path, method: :get%>
+
 <div class= "write">
 </div>
 </div>
-
+<%=gravatar_for @user%><br>
+<%= render "shared/list"%>
 <%if @user.playlists.any?%>
 
+
 <%@playlist= @user.playlists.all%>
-<div class="playlist">
-<h2> Your playlists </h2>
+<div class="playlist bg-dark" >
+<h2> <center>Your playlists </center></h2>
 
 <div class= "listUpdate">
 <%=render 'shared/playlist-container', object: @playlist %>
 </div>
-
 <%end%>
-
 
 
 </div>
 
+
+<div class= "flash">
+
+</div>

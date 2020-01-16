@@ -1,6 +1,16 @@
-function myF() {   
-    $(".listUpdate").html("<%= j(render 'shared/playlist-container', object: @playlist=@user.playlists.all )%>"); 
+function addplaylist() {   
+    $(".listUpdate").html("<%= j(render 'shared/playlist-container', object: @playlist=@user.playlists.all )%>");
+   flash()
+   removeFlash()
+   
    };
+function flash() {   
+    $('.flash').html("<%= j(render 'users/flash', locals: {flash: flash[:playlist]} )%>");
+    
+}
 
-  
-$(".createPlaylist").bind('ajax:success', myF())
+function removeFlash() {
+    $('#flash').fadeOut(2000);
+}
+    
+$(".createPlaylist").bind('ajax:success', addplaylist())
