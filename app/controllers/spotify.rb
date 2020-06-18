@@ -8,9 +8,7 @@ me = RSpotify::User.find('Mladen')
 #user= User.find_by(id:id).destroy
 #end
 
-@user=User.first
-@playlist = @user.playlists
-@FirPlay = @playlist.first.songs
+
 =begin
 @song= Song.all
 @song.each do |s|
@@ -20,11 +18,27 @@ me = RSpotify::User.find('Mladen')
 
 end
 =end
-search= "mitch"
 
-@song = Song.where("artrist like ?", "%#{search}%")
 
-@song.each do |s|
 
-p s.name
-end
+ 
+ 
+
+
+    def popular_songs(songs)
+        
+        popular=songs.sort_by {|song| song.playlists.length}
+        #songs.each do |s|
+        first_song = popular[-1]
+        second_song = popular[-2]
+        thrd_song = popular[-3]
+        forth_song =popular[-4]
+    
+        
+    
+    end
+    
+
+popular_songs(songs=Song.all)
+
+popular_songs.call(first_song)
