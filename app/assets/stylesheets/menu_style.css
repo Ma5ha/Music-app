@@ -1,16 +1,20 @@
-nav ul#menu  {
-    
+nav ul#menu {
   float: left;
   height: 50px;
-  
+}
 
-  }
 nav ul#menu li {
   padding-left: 7px;
   padding-top: 7px;
 }
-nav ul#menu div.dropdown{
+
+nav ul#menu div.dropdown {
   padding-left: 7px;
   padding-top: 7px;
-  
+}
+
+.create-playlist {
+  float: right;
+  position: relative;
+  bottom: -155px;
 }

@@ -38,22 +38,7 @@
 
 
 </div>
-<%require 'rspotify'
-
-RSpotify.authenticate("d571e4fbe871458994520ef653c4e985", "aa03ad4a6ec144ed9f91607d599f82d4")
-%>
-<%sorry = RSpotify::Track.search("Sorry").first%>
-<%=RSpotify::Player.play_track(sorry)%>
 
 
 
-<div class="container">
-  <div class="row ">
-    <div class="col border">col</div>
-    <div class="col border">col</div>
-    <div class="w-100"></div>
-    <div class="col border">col</div>
-    <div class="col border">col</div>
-  </div>
-</div>
 
